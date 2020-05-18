@@ -22,7 +22,7 @@ public class ModelImpl extends AbstractModel {
     private boolean isSimple = false;
     private String description;
     private Object example;
-    private Property additionalProperties;
+    private Object additionalProperties;
     private String discriminator;
     @JsonProperty("default")
     private String defaultValue;
@@ -98,7 +98,7 @@ public class ModelImpl extends AbstractModel {
         return this;
     }
 
-    public ModelImpl additionalProperties(Property additionalProperties) {
+    public ModelImpl additionalProperties(Object additionalProperties) {
         this.setAdditionalProperties(additionalProperties);
         return this;
     }
@@ -157,11 +157,11 @@ public class ModelImpl extends AbstractModel {
         this.isSimple = isSimple;
     }
 
-    public Property getAdditionalProperties() {
+    public Object getAdditionalProperties() {
         return additionalProperties;
     }
 
-    public void setAdditionalProperties(Property additionalProperties) {
+    public void setAdditionalProperties(Object additionalProperties) {
         type(OBJECT);
         this.additionalProperties = additionalProperties;
     }
